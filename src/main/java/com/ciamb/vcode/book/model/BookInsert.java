@@ -1,4 +1,4 @@
-package com.ciamb.vcode.book;
+package com.ciamb.vcode.book.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

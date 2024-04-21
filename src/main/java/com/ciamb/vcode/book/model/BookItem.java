@@ -1,4 +1,4 @@
-package com.ciamb.vcode.book;
+package com.ciamb.vcode.book.model;
 
 import java.time.LocalDateTime;
 
@@ -21,37 +21,37 @@ public record BookItem(
     LocalDateTime createdDate
 ) { 
 
-    public static final Entrance enter() {
-        return new Entrance();
+    public static final Builder builder() {
+        return new Builder();
     }
 
-    public static final class Entrance {
+    public static final class Builder {
         private Long id;
         private String name;
         private Integer pageNumber;
         private LocalDateTime createdDate;
 
-        Entrance withId(Long id) {
+        public Builder withId(Long id) {
             this.id = id;
             return this;
         }
 
-        Entrance withName(String s) {
+        public Builder withName(String s) {
             this.name = s;
             return this;
         }
 
-        Entrance withPageNumber(Integer i) {
+        public Builder withPageNumber(Integer i) {
             this.pageNumber = i;
             return this;
         }
 
-        Entrance withCreatedDate(LocalDateTime dt) {
+        public Builder withCreatedDate(LocalDateTime dt) {
             this.createdDate = dt;
             return this;
         }
 
-        public BookItem exit() {
+        public BookItem build() {
             return new BookItem(id, name, pageNumber, createdDate);
         }
     } 
